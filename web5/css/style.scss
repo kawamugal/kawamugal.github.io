@@ -1,0 +1,178 @@
+@charset "UTF-8";
+
+/* 変数
+------------------------------- */
+$textColor: #383E45 ;
+$textColor2: #ccc ;
+$media-sp: 834px ;
+
+
+/* 共通部分
+------------------------------- */
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: "Helvetica Neue", "Arial", "Hiragino Sans", "Meiryo", "sans-serif";
+  color: $textColor;
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  // padding: 0 4%;
+}
+
+
+/* コンテンツ共通 */
+.recipe{
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 60px;
+}
+
+/* メイン画像 */
+.main-img {
+  width: 50%;
+  height: 700px;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    height: 700px;
+  }
+}
+
+.right{
+  width: 40%;
+  margin: 40px 5% 0;
+}
+
+h1 {
+  margin-bottom: 14px;
+  font-size: 1.75rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin: 35px 0 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px $textColor2 solid;
+}
+
+.recipe-item {
+
+  dl {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    dt{
+      text-align: left;
+    }
+
+    dd{
+      text-align: right;
+    }
+  }
+
+
+
+  dt, dd, li {
+    border-bottom: 1px $textColor2 dotted;
+    padding: 4px 0;
+  }
+
+  li {
+    list-style-type: decimal;
+    list-style-position: inside;
+  }
+
+}
+
+
+.content{
+  text-align: center;
+  margin-bottom: 70px;
+  font-size: 1rem;
+}
+
+.button{
+  width: 235px;
+  padding: 17px;
+  margin: 0 auto;
+  border: 1px $textColor solid;
+  font-size: 0.875rem;
+  color: $textColor;
+  display: block;
+}
+
+/* フッター */
+footer{
+  margin: 100px 0 20px;
+  text-align: center;
+  font-size: 0.75rem;
+
+  ul{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+
+    li {
+      padding: 10px;
+
+      a{
+        color: $textColor;
+        text-decoration: underline;
+      }
+
+    }
+  }
+}
+
+
+/* モバイル
+------------------------------- */
+@media screen and (max-width:$media-sp){
+
+  .recipe{
+      flex-direction: column;
+      height: auto;
+      width: 100%;
+  }
+
+  .main-img {
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .right{
+    margin: 40px 40px 0px;
+  }
+
+  .content {
+    margin: 60px 0;
+  }
+
+  footer{
+    margin-top: 80px;
+  }
+
+}
