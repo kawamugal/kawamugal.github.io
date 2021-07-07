@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+/* 変数
+------------------------------- */
+$textColor: #000 ;
+$subColor: #aaa ;
+$baseColor: #fff;
+$media-sp: 900px ;
+
+
+/* 共通部分
+------------------------------- */
+html {
+  font-size: 100%;
+}
+
+body {
+  background: $baseColor;
+  color: $textColor;
+  font-size: 1rem;
+  line-height: 1;
+  overflow-x: hidden;
+  font-family: 'Heebo', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: $textColor;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  // vertical-align: bottom;
+}
+
+/* コンテンツ共通 */
+.flex-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text {
+  margin-top: 160px;
+  padding-left: 60px;
+  width: 35%;
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+
+h1 {
+  margin-bottom: 60px;
+
+  .en {
+    display: block;
+    font-size: 4.4rem;
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+  }
+
+  .ja{
+    display: block;
+    font-size: 0.875rem;
+    letter-spacing: 0.2em;
+  }
+}
+
+p {
+  width: 600px;
+  font-size: 0.875rem;
+  letter-spacing: 0.2em;
+  line-height: 1.5;
+}
+
+.right {
+  margin-top: 100px;
+  width: 65%;
+}
+
+.img {
+  transform:skewX(-18deg);
+  transform-origin: bottom left;
+  overflow: hidden;
+  height: 500px;
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    transform:skewX(18deg);
+    transform-origin: bottom left;
+  }
+}
+
+
+
+/* モバイル
+------------------------------- */
+@media screen and (max-width:$media-sp){
+
+  .pc {
+    display: none;
+  }
+
+  .flex-item {
+    flex-direction: column;
+  }
+
+  .text {
+    margin-top: 100px;
+    padding: 20px;
+    width: 100%;
+  }
+
+  h1 {
+    .en {
+      display: block;
+      font-size: 2.2rem;
+    }
+  }
+
+  p {
+    width: 100%;
+  }
+
+  .right {
+    margin-top: 0px;
+    width: 100%;
+  }
+
+  .img {
+    transform:skewX(0deg);
+
+    img {
+      transform:skewX(0deg);
+    }
+  }
+
+}
