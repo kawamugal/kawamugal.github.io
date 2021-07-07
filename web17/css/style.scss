@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+/* 変数
+------------------------------- */
+$textColor: #000 ;
+$baseColor: #ddd;
+$subcolor: #3c3636;
+$media-sp: 900px ;
+
+
+/* 共通部分
+------------------------------- */
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: $baseColor;
+  color: $textColor;
+  font-size: 0.875rem;
+  line-height: 1;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+.flex-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* コンテンツ共通 */
+
+h1 {
+  display: block;
+  text-align: center;
+  font-size: 1.65rem;
+  line-height: 5;
+  background: #fff;
+}
+
+nav {
+  background: $textColor;
+  color: #fff;
+  line-height: 3.5;
+  height: 50px;
+  align-items: center;
+}
+
+.menu {
+    position: relative;
+    margin: 0 auto;
+
+  > .single {
+    width: 25%;
+    text-align: center;
+    position: relative;
+
+    &:hover{
+      background: $subcolor;
+    }
+    &:hover .menu-second{
+      visibility: visible;
+    }
+
+    > .menu-second {
+      visibility: hidden;
+      width: 100%;
+      background-color: #3c3636;
+      position: absolute;
+      left: 0;
+
+      a:hover {
+        opacity: 0.7;
+      }
+    }
+  } // .single
+
+  > .wide {
+    width: 25%;
+    text-align: center;
+
+    .flex-item {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    &:hover{
+      background: $subcolor;
+    }
+    &:hover .menu-second{
+      visibility: visible;
+    }
+
+    > .menu-second {
+      visibility: hidden;
+      width: 100%;
+      background-color: #3c3636;
+      position: absolute;
+      left: 0;
+
+      a:hover {
+        opacity: 0.7;
+      }
+
+      li {
+        width: 25%;
+      }
+    }
+
+
+  } // .wide
+
+}
+
+
+
+/* モバイル
+------------------------------- */
+@media screen and (max-width:$media-sp){
+  nav {
+  font-size: 0.6rem;
+  line-height: 5;
+  }
+}
