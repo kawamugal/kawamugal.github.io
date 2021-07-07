@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+/* 変数
+------------------------------- */
+$textColor: #fff;
+$textColor2: #555;
+$baseColor: #71bdd5;
+$media-sp: 768px ;
+
+
+/* 共通部分
+------------------------------- */
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: 'Helvetica Neue','Arial','Hiragino Sans','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
+  background: $baseColor;
+  color: $textColor;
+  font-size: 0.875rem;
+  line-height: 1;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: $textColor;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+.flex-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* コンテンツ共通 */
+h1 {
+  font-size: 2rem;
+  letter-spacing: 0.15em;
+  padding: 50px;
+}
+
+/* ヘッダー */
+
+
+/* メイン */
+main {
+  ul {
+    flex-wrap: wrap;
+
+    li {
+      width: 48%;
+      padding-bottom: 50px;
+    }
+
+    img {
+      border: 5px $textColor solid;
+      border-radius: 10px;
+    }
+
+    p {
+      padding: 10px;
+    }
+
+    a:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+/* フッター */
+footer {
+  margin: 70px auto 15px;
+  color: $textColor2;
+  font-size: 0.6rem;
+}
+
+
+/* モバイル
+------------------------------- */
+@media screen and (max-width:$media-sp){
+
+}
