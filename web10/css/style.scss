@@ -1,0 +1,414 @@
+@charset "UTF-8";
+
+/* 変数
+------------------------------- */
+$textColor: #000 ;
+$textColor2: #888 ;
+$baseColor: #eee ;
+$media-sp: 900px ;
+
+
+/* 共通部分
+------------------------------- */
+html {
+  font-size: 100%;
+}
+
+body {
+  // font-family: "Hiragino Sans","sans-serif";
+  background: $baseColor;
+  color: $textColor;
+  font-size: 0.875rem;
+  line-height: 2;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: $textColor;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* コンテンツ共通 */
+
+.wrapper{
+  max-width: 1032px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.flex-item {
+  display: flex;
+}
+
+h2 {
+  .en{
+    font-size: 2.25rem;
+    font-weight: normal;
+    letter-spacing: 0.3em;
+    line-height: 1.2;
+    display: block;
+  }
+
+  .jp{
+    font-size: 0.875rem;
+    font-weight: normal;
+    margin-bottom: 30px;
+    display: block;
+  }
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 40px; height: 2px;
+  border-bottom: 1px $textColor solid;
+  margin-bottom: 50px;
+}
+
+/* ヘッダー*/
+
+.logo{
+  align-items: center;
+  vertical-align: bottom;
+  line-height: 1;
+  height: 100%;
+  margin: auto 0;
+
+  img {
+      width: 100px;
+      margin-right: 60px;
+  }
+}
+
+header {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  height: 80px;
+
+  ul.flex-item{
+    align-items: center;
+  }
+
+  li {
+    padding-right: 30px;
+    align-items: center;
+  }
+
+
+
+  .button{
+    width: 200px;
+    text-align: center;
+    font-size: 0.75rem;
+
+    a {
+    display: block;
+    background: #000;
+    color: #fff;
+    line-height: 80px;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    }
+  }
+}
+
+.main-img {
+
+  img {
+      width: 100%;
+      height: calc(100vh - 80px);
+      object-fit: cover;
+  }
+}
+
+#NEWS {
+    margin: 120px auto;
+
+  .item span {
+    font-size: 0.7rem;
+    background: $textColor;
+    color: #fff;
+    padding: 4px 6px;
+    margin-left: 10px;
+  }
+
+  .item {
+    width: 100%;
+    padding: 5px 20px;
+    border-right: 1px $textColor solid;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+
+    time {
+        align-items: center;
+        line-height: 1;
+    }
+
+    p {
+      margin-top: 6px;
+    }
+
+  }
+}
+
+#ABOUT {
+  margin-right: 5%;
+  margin-bottom: 120px;
+
+  .img {
+    width: 60%; height: 400px;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .content{
+    width: 40%;
+    padding-left: 4%;
+    margin-top: 180px;
+  }
+
+}
+
+#BUSINESS {
+  margin: 120px auto 80px;
+
+  .flex-item {
+    padding: 0 70px;
+  }
+
+  .content-left {
+    margin-top: 100px;
+  }
+
+  li {
+      padding: 0 32px 30px;
+  }
+
+  p {
+    font-weight: 600;
+    line-height: 3;
+    // margin-bottom: 8px;
+
+    &::before {
+      content: "−" ;
+      font-weight: 200;
+      margin-right: 10px;
+    }
+  }
+}
+
+#COMPANY {
+  margin: 0 auto;
+  align-items: center;
+  position: relative;
+  height: 750px;
+
+ .white-box {
+   background: #fff;
+   width: 55%; height: 630px;
+   padding: 100px 60px;
+   position: absolute;
+   left: 0; top:0;
+ }
+
+  dl.flex-item {
+    flex-wrap: wrap;
+    line-height: 2.2;
+  }
+
+  dt {
+    flex-basis:20%;
+  }
+
+  dd {
+    flex-basis:80%;
+  }
+
+    img {
+      width: 53%; height: 400px;
+      object-fit: cover;
+      position: absolute;
+      left: calc(55% - 80px); top: calc(315px - 200px);
+    }
+}
+
+/* フッター */
+footer{
+  font-size: 0.85rem;
+  background: #fff;
+  line-height: 1.6;
+  padding-bottom: 20px;
+
+  .flex-item {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    justify-content: space-between;
+  }
+
+  .footer-bottom {
+    font-size: 0.5rem;
+  }
+}
+
+
+/* モバイル
+------------------------------- */
+@media screen and (max-width:$media-sp){
+
+  .flex-item {
+      flex-direction: column;
+  }
+
+
+  .logo{
+      img {
+        width: 80px;
+        margin: 10px 0 5px;
+      }
+  }
+
+  header {
+
+    ul.flex-item{
+        flex-direction: row;
+    }
+
+    li {
+      padding: 0 30px 0 0;
+    }
+
+    .button{
+      display: none;
+    }
+  }
+
+  h2 {
+    .jp{
+      margin-bottom: 15px;
+    }
+  }
+
+  .section-title::after {
+    content: "";
+    margin-bottom: 35px;
+  }
+
+  #NEWS {
+      margin: 60px auto;
+
+    .category {
+      font-size: 0.7rem;
+      background: $textColor;
+      color: #fff;
+      padding: 4px 6px;
+      margin-left: 10px;
+    }
+
+    .item {
+      padding: 0 0 30px;
+      border-right: none;
+    }
+  }
+
+  #ABOUT {
+    margin: 0 auto;
+    // margin-bottom: 30px;
+
+    .img {
+      width: 100%; height: 400px;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .content{
+      width: 100%;
+      padding: 0 4%;
+      margin-top: 30px;
+    }
+  }
+
+  #BUSINESS {
+    margin: 60px auto;
+
+    .flex-item {
+      padding: 0;
+    }
+
+    .content-left {
+      margin-top: 0px;
+    }
+
+    li {
+        padding: 0;
+    }
+  }
+
+  #COMPANY {
+    height: auto;
+
+   .white-box {
+     width: 100%; height: 100%;
+     padding: 30px 20px;
+     position: static;
+   }
+
+    dl.flex-item {
+      flex-wrap: wrap;
+      line-height: 2.2;
+    }
+
+    dt {
+    }
+
+    dd {
+      padding-left: 15px;
+    }
+
+      img {
+        width: 100%; height: 400px;
+        object-fit: cover;
+        position: static;
+        left: calc(55% - 80px); top: calc(315px - 200px);
+        margin: 20px auto 0;
+      }
+  }
+
+  footer{
+
+    .flex-item {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      justify-content: space-between;
+    }
+
+    .item {
+      margin-top: 3px;
+    }
+  }
+
+}
