@@ -69,17 +69,33 @@ header {
     content: '';
     position: absolute;
     bottom: -4px;
-    left: 8px;
-    width: 88%;
+    left: 5px;
+    width: 89%;
     height: 3px;
     background:$baseColor;
-    /*アニメーションの指定*/
-    transition: all .3s;
-    transform: scale(0, 1);/*X方向0、Y方向1*/
-    transform-origin: right top;/*上部中央基点*/
+    transition: transform .3s;
+    transform: scale(0, 1);
+    transform-origin: right top;
     }
 
     &:hover::after {
+    transform: scale(1, 1);
+    }
+
+    &::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 5px;
+    width: 98%;
+    height: 3px;
+    background:$baseColor;
+    transition: transform .3s;
+    transform: scale(0, 1);
+    transform-origin: left top;
+    }
+
+    &:hover::before {
     transform: scale(1, 1);
     }
   }
@@ -106,7 +122,6 @@ h1 {
   }
 
   &:hover::after {
-    // display: none;
     transform: rotate(45deg) translateY(10px) translateX(10px);
   }
 }
