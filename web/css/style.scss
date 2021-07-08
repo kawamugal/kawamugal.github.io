@@ -13,7 +13,6 @@ $media-sp: 830px ;
 ------------------------------- */
 html {
   font-size: 100%;
-  // height: 300vh;
 }
 
 body {
@@ -21,7 +20,6 @@ body {
   color: $textColor;
   font-size: 1rem;
   line-height: 1;
-  // height: 100%;
 }
 
 a {
@@ -39,7 +37,6 @@ img {
 }
 
 .wrapper {
-  // height: 100%;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 4%;
@@ -57,18 +54,42 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  // border: 10px $baseColor solid;
 
   a {
     color: $baseColor;
+    transition: 0.5s ;
+    position: relative;
+
+    &:hover {
+      // transform: translateY(10px);
+    }
+
+    &::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 8px;
+    width: 88%;
+    height: 3px;
+    background:$baseColor;
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(0, 1);/*X方向0、Y方向1*/
+    transform-origin: right top;/*上部中央基点*/
+    }
+
+    &:hover::after {
+    transform: scale(1, 1);
+    }
   }
 }
-
 
 h1 {
   font-family:'Vast Shadow';
   font-weight: normal;
-  font-size: 5rem;
-  // letter-spacing: 0.15em;
+  font-size: 3.5rem;
+  letter-spacing: -0.02em;
   position: relative;
 
   &::after { //矢印
@@ -76,25 +97,37 @@ h1 {
     display: block;
     position: absolute;
     left: calc(50% - 10px);
-    top: 100px;
+    top: 80px;
     width:20px; height:20px;
-    border-bottom: 2px $baseColor solid;
-    border-right: 2px $baseColor solid;
-    transform: rotate(45deg);
+    border-bottom: 3px $baseColor solid;
+    border-right: 3px $baseColor solid;
+    transform: rotate(45deg) translateY(0) translateX(0);
+    transition: 0.5s ;
+  }
+
+  &:hover::after {
+    // display: none;
+    transform: rotate(45deg) translateY(10px) translateX(10px);
   }
 }
 
 /* メイン */
 #gallery {
-  // height: 100%;
+
+  a {
+    transition: 0.1s ;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
 
   .grid-item {
-    padding-top: 50px;
-    margin-bottom: 50px;
+    padding-top: 60px;
+    margin-bottom: 60px;
     display: grid;
-    gap: 4%;
+    gap: 80px 4%;
     grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-    // grid-auto-rows: minmax(auto);
 
     img {
       border: 5px $textColor solid;
@@ -104,10 +137,6 @@ h1 {
     p {
       padding: 10px;
     }
-
-    a:hover {
-      opacity: 0.7;
-    }
   }
 }
 
@@ -115,7 +144,7 @@ h1 {
 
 .fadeUp{
 animation-name:fadeUpAnime;
-animation-duration:1.5s;
+animation-duration:1s;
 animation-fill-mode:forwards;
 opacity:0;
 }
@@ -123,7 +152,7 @@ opacity:0;
 @keyframes fadeUpAnime{
   from {
     opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(20px);
   }
 
   to {
@@ -132,7 +161,7 @@ opacity:0;
   }
 }
 
-/* スクロールをしたら出現する要素にはじめに透過0を指定　*/
+/* スクロールをしたら出現する要素にはじめに透過0を指定*/
 .fadeUpTrigger{
     opacity: 0;
 }
@@ -150,10 +179,13 @@ footer {
 ------------------------------- */
 @media screen and (max-width:$media-sp){
 
-#gallery {
-  .grid-item {
-    gap: 1%;
-    grid-template-columns: 1fr;
+  h1 {
+    font-size: 3rem;
   }
+
+  #gallery {
+    .grid-item {
+      grid-template-columns: 1fr;
+    }
 }
 }
