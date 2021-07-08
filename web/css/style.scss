@@ -4,8 +4,8 @@
 ------------------------------- */
 $textColor: #fff;
 $textColor2: #555;
-$baseColor: #71bdd5;
-$baseColor2: #f4f1db;
+$baseColor: #f495b8;
+$baseColor2: #e2fcee;
 $media-sp: 830px ;
 
 
@@ -54,7 +54,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  // border: 10px $baseColor solid;
+  // border: 6px $baseColor solid;
 
   a {
     color: $baseColor;
@@ -139,7 +139,7 @@ h1 {
 
   .grid-item {
     padding-top: 80px;
-    margin-bottom: 60px;
+    padding-bottom: 80px;
     display: grid;
     gap: 80px 4%;
     grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
@@ -184,6 +184,7 @@ opacity:0;
 
 /* フッター */
 footer {
+  background:$baseColor;
   color: $textColor;
   font-size: 0.6rem;
   padding: 20px;
