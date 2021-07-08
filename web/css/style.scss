@@ -68,7 +68,7 @@ header {
     &::after {
     content: '';
     position: absolute;
-    bottom: -4px;
+    bottom: 0px;
     left: 5px;
     width: 89%;
     height: 2px;
@@ -85,7 +85,7 @@ header {
     &::before {
     content: '';
     position: absolute;
-    top: -3px;
+    top: -2px;
     left: 5px;
     width: 98%;
     height: 2px;
@@ -104,7 +104,7 @@ header {
 h1 {
   font-family:'Vast Shadow';
   font-weight: normal;
-  font-size: 3.5rem;
+  font-size: 4.5rem;
   letter-spacing: -0.02em;
   position: relative;
 
@@ -113,16 +113,16 @@ h1 {
     display: block;
     position: absolute;
     left: calc(50% - 10px);
-    top: 80px;
+    top: 100px;
     width:20px; height:20px;
     border-bottom: 3px $baseColor solid;
     border-right: 3px $baseColor solid;
-    transform: rotate(45deg) translateY(0) translateX(0);
-    transition: 0.5s ;
+    transform: rotate(45deg);
+    transition: top 0.5s ;
   }
 
   &:hover::after {
-    transform: rotate(45deg) translateY(10px) translateX(10px);
+    top: 115px;
   }
 }
 
@@ -138,7 +138,7 @@ h1 {
   }
 
   .grid-item {
-    padding-top: 60px;
+    padding-top: 80px;
     margin-bottom: 60px;
     display: grid;
     gap: 80px 4%;
