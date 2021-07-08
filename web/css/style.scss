@@ -68,7 +68,7 @@ header {
     &::after {
     content: '';
     position: absolute;
-    bottom: 0px;
+    bottom: -2px;
     left: 5px;
     width: 89%;
     height: 2px;
@@ -85,7 +85,7 @@ header {
     &::before {
     content: '';
     position: absolute;
-    top: -2px;
+    top: -4px;
     left: 5px;
     width: 98%;
     height: 2px;
