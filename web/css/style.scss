@@ -5,22 +5,23 @@
 $textColor: #fff;
 $textColor2: #555;
 $baseColor: #71bdd5;
-$media-sp: 768px ;
+$baseColor2: #f4f1db;
+$media-sp: 830px ;
 
 
 /* 共通部分
 ------------------------------- */
 html {
   font-size: 100%;
+  // height: 300vh;
 }
 
 body {
-  font-family: 'Helvetica Neue','Arial','Hiragino Sans','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
   background: $baseColor;
   color: $textColor;
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1;
-  overflow-x: hidden;
+  // height: 100%;
 }
 
 a {
@@ -37,41 +38,67 @@ img {
   width: 100%;
 }
 
-.flex-item {
-  display: flex;
-  justify-content: space-between;
-}
-
 .wrapper {
-  max-width: 1000px;
+  // height: 100%;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 4%;
   text-align: center;
 }
 
 /* コンテンツ共通 */
-h1 {
-  font-size: 2rem;
-  letter-spacing: 0.15em;
-  padding: 50px;
-}
 
 /* ヘッダー */
 
+header {
+  background:$baseColor2;
+  height: 100vh; width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    color: $baseColor;
+  }
+}
+
+
+h1 {
+  font-family:'Vast Shadow';
+  font-weight: normal;
+  font-size: 5rem;
+  // letter-spacing: 0.15em;
+  position: relative;
+
+  &::after { //矢印
+    content: "";
+    display: block;
+    position: absolute;
+    left: calc(50% - 10px);
+    top: 100px;
+    width:20px; height:20px;
+    border-bottom: 2px $baseColor solid;
+    border-right: 2px $baseColor solid;
+    transform: rotate(45deg);
+  }
+}
 
 /* メイン */
-main {
-  ul {
-    flex-wrap: wrap;
+#gallery {
+  // height: 100%;
 
-    li {
-      width: 48%;
-      padding-bottom: 50px;
-    }
+  .grid-item {
+    padding-top: 50px;
+    margin-bottom: 50px;
+    display: grid;
+    gap: 4%;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    // grid-auto-rows: minmax(auto);
 
     img {
       border: 5px $textColor solid;
-      border-radius: 10px;
+      border-radius: 6px;
     }
 
     p {
@@ -84,11 +111,38 @@ main {
   }
 }
 
+/* fadeUp */
+
+.fadeUp{
+animation-name:fadeUpAnime;
+animation-duration:1.5s;
+animation-fill-mode:forwards;
+opacity:0;
+}
+
+@keyframes fadeUpAnime{
+  from {
+    opacity: 0;
+  transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+  transform: translateY(0);
+  }
+}
+
+/* スクロールをしたら出現する要素にはじめに透過0を指定　*/
+.fadeUpTrigger{
+    opacity: 0;
+}
+
+
 /* フッター */
 footer {
-  margin: 70px auto 15px;
-  color: $textColor2;
+  color: $textColor;
   font-size: 0.6rem;
+  padding: 20px;
 }
 
 
@@ -96,4 +150,10 @@ footer {
 ------------------------------- */
 @media screen and (max-width:$media-sp){
 
+#gallery {
+  .grid-item {
+    gap: 1%;
+    grid-template-columns: 1fr;
+  }
+}
 }
