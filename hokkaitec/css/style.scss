@@ -8,7 +8,8 @@ $baseColor2: #eaf3fb;
 $baseColor3: #005abe;
 $baseColor4:#ffe673;
 $media-lg: 1270px ;
-$media-md: 820px ;
+$media-md: 800px ;
+$media-sm: 450px ;
 
 
 /* 共通部分
@@ -23,6 +24,7 @@ body {
   font-size: 1rem;
   line-height: 1.5;
   font-family: 'Hiragino Sans', sans-serif;
+  overflow-x: hidden !important;
 }
 
 a {
@@ -256,6 +258,10 @@ main{
    padding: 14px 30px;
    text-align: left;
    line-height: 1.6;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
    }
 
    .white_box{
@@ -355,6 +361,32 @@ footer {
 }
 @media screen and (max-width:$media-md){
 
+  html {
+    font-size: 90%;
+  }
+
+  body {
+    // font-size: 0.85rem;
+    // line-height: 1.2;
+  }
+
+  h1 {
+    // letter-spacing: 0.15rem;
+    // font-size: 2.2rem;
+  }
+
+  h2 {
+    // letter-spacing: 0.1rem;
+    // font-size: 1.2rem;
+  }
+
+  h3 {
+    // line-height: 1.6;
+    // font-size: 1.15rem;
+    // color: $baseColor3;
+    // margin-bottom: 10px;
+  }
+
   .flex {
     flex-direction: column;
   }
@@ -388,6 +420,7 @@ footer {
 
   header {
     padding: 0;
+    height: 80px;
 
     .wrapper{
       text-align: left;
@@ -415,13 +448,13 @@ footer {
     padding: 0;
     background: url("../img/main_sp.jpg") no-repeat;
     background-position: center 130px;
-    background-size: cover;
-    height: 650px;
-    margin-bottom: 300px;
+    background-size: 1000px;
+    // height: 650px;
+    margin-bottom: 50px;
   }
 
   .news {
-    margin-top: 750px;//フィードまでの空き
+    margin-top: 620px;//フィードまでの空き
 
     .news_icon {
       margin-right: 0px;
@@ -433,29 +466,48 @@ footer {
     }
   }
 
-  h1 {
-    letter-spacing: 0.15rem;
-    font-size: 2.2rem;
-  }
 
   main{
-    .user_voice{
+    .title {
+      .copy {
+        height: 18px;
+      }
+    }
 
+    .user_voice{
+      position: relative;
       padding-top: 60px;
 
       .user_icon {
-        // position: relative;
-        // margin-bottom: 40px;
-        text-align: center;
-
         img {
           width: 150px;
           position: absolute;
-          bottom: 90px;
-          right: calc(50% - 75px);
+          bottom: 80px;
+          right: calc(50% - 80px);
         }
       }
     }
+    .blue_box{
+    height: 80px;
+    padding: 10px 6%;
+    text-align: center;
+    }
+  }
+}
+@media screen and (max-width:$media-sm){
+
+  h1 {
+    // letter-spacing: 0.15rem;
+    font-size: 2rem;
   }
 
+  .blue_box{
+
+    h2 {
+      font-size: 5vw;
+    }
+    p{
+      font-size: 3.5vw;
+    }
+  }
 }
