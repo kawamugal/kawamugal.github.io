@@ -9,7 +9,7 @@
 
   <!-- 検索避け -->
     <meta name="robots" content="noindex">
-    
+
   <!-- CSS -->
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
   <link href="./css/style.min.css" rel="stylesheet">
@@ -18,22 +18,21 @@
 </head>
 <body id="home">
 
-  <div class="top">
+  <div class="home_bg">
       <header>
-        <div class="flex wrapper">
+        <div class="header_bg flex">
           <div class="logo"><a href="./index.html"><img src="./img/logo.svg" alt=""></a></div>
           <nav>
-          <ul class="flex">
-            <li><a href="./service.html">SERVICE</a></li>
-            <li><a href="">COMPANY</a></li>
-            <li><a href="">CONTACT</a></li>
-          </ul>
+            <ul class="flex">
+              <li><a href="./service.html">SERVICE</a></li>
+              <li><a href="./company.html">COMPANY</a></li>
+              <li><a href="./contact.html">CONTACT</a></li>
+            </ul>
           </nav>
         </div>
       </header>
-
-      <div class="news flex wrapper">
-        <img class="news_icon" src="./img/news.svg" alt="">
+      <div class="home_news flex">
+        <img class="icon" src="./img/news.svg" alt="">
     		<!-- <div id="preview" class="fw-iframe" src="" scrolling="no" frameborder="no"> -->
           <!-- <img src="./img/feedwind.jpg" alt=""> -->
     		<!-- </div> -->
@@ -41,9 +40,8 @@
       </div>
 	</div>
 
-  <main>
-    <div class="wrapper2">
-
+  <main class="main_bg">
+    <div class="content_wrap">
       <div class="title fadein">
         <img class="light_icon" src="./img/light_icon.svg" alt=""><br>
         <img class="copy" src="./img/copy_top1.svg" alt="">
@@ -55,9 +53,9 @@
             <h3>北広島市 H様宅（一戸建て）</h3>
             <p>家族構成：4人家族（ご夫婦40代・お子様2人）</p>
           </div>
-          <img class="" src="./img/user_icon1.svg" alt="">
+          <img src="./img/user_icon1.svg" alt="">
         </div>
-        <div class="user_voice_top flex">
+        <div class="user_voice_list flex">
           <div class="list">
             <h4>工事内容</h4>
             <dl class="flex">
@@ -73,21 +71,21 @@
               <dt>200万円（機器、配線含む）</dt>
             </dl>
           </div>
-          <div class="photo"><img src="./img/gray.png" alt="">
+          <div class="user_voice_photo"><img src="./img/gray.png" alt="">
           </div>
         </div>
-        <div>
+        <div class="user_voice_comment">
           <h4>スマート電化を採用した理由</h4>
           <div class="white_box">
             <p>前住んでいた集合住宅もオール電化で、「火のない安心」を実感していたので、家を建てる際はスマート電化にしようと決めていました。</p>
           </div>
           <h4>使ってみた感想</h4>
           <div class="white_box">
-            <p><span>給湯　エコキュート</span><br>
+            <p><span class="circle">給湯　エコキュート</span><br>
             エコキュートは日中の追い焚きもできるので、湯切れの心配がなく安心です。</p>
-            <p><span>調理　IHクッキングヒーター</span><br>
+            <p><span class="circle">調理　IHクッキングヒーター</span><br>
             火のない安心感はやはり大きな魅力です。揚げ物の時に、鍋の上に新聞紙やチラシを置けるので、油が飛び散らなくて便利です。</p>
-            <p><span>暖房　寒冷地向けあったかエアコン</span><br>
+            <p><span class="circle">暖房　寒冷地向けあったかエアコン</span><br>
             すばやくお部屋が暖まるのでお客様が来る時にさっと暖かくしてお迎えできたりととても便利です。また、室内の温度を細かく調節できるので、温度管理が大変だった蓄熱暖房と比べて快適に過ごせています。</p>
             <dl class="flex">
               <dd><img src="./img/gray2.png" alt=""><img src="./img/gray2.png" alt=""></dd>
@@ -102,11 +100,11 @@
         <div class="user_icon">
           <div class="blue_box">
             <h3>札幌市 W様宅（分譲マンション）</h3>
-            <p>家族構成：４人家族（ご夫婦40代・お子様2人）</p>
+            <p>家族構成：4人家族（ご夫婦40代・お子様2人）</p>
           </div>
-          <img class="" src="./img/user_icon2.svg" alt="">
+          <img src="./img/user_icon2.svg" alt="">
         </div>
-        <div class="user_voice_top flex">
+        <div class="user_voice_list flex">
           <div class="list">
             <h4>工事内容</h4>
             <dl class="flex">
@@ -122,21 +120,21 @@
               <dt>200万円（機器、配線含む）</dt>
             </dl>
           </div>
-          <div class="photo"><img src="./img/gray.png" alt="">
+          <div class="user_voice_photo"><img src="./img/gray.png" alt="">
           </div>
         </div>
-        <div>
+        <div class="user_voice_comment">
           <h4>スマート電化を採用した理由</h4>
           <div class="white_box">
             <p>前住んでいた集合住宅もオール電化で、「火のない安心」を実感していたので、家を建てる際はスマート電化にしようと決めていました。</p>
           </div>
           <h4>使ってみた感想</h4>
           <div class="white_box">
-            <p><span>給湯　エコキュート</span><br>
+            <p><span class="circle">給湯　エコキュート</span><br>
             エコキュートは日中の追い焚きもできるので、湯切れの心配がなく安心です。</p>
-            <p><span>調理　IHクッキングヒーター</span><br>
+            <p><span class="circle">調理　IHクッキングヒーター</span><br>
             火のない安心感はやはり大きな魅力です。揚げ物の時に、鍋の上に新聞紙やチラシを置けるので、油が飛び散らなくて便利です。</p>
-            <p><span>暖房　寒冷地向けあったかエアコン</span><br>
+            <p><span class="circle">暖房　寒冷地向けあったかエアコン</span><br>
             すばやくお部屋が暖まるのでお客様が来る時にさっと暖かくしてお迎えできたりととても便利です。また、室内の温度を細かく調節できるので、温度管理が大変だった蓄熱暖房と比べて快適に過ごせています。</p>
             <dl class="flex">
               <dd><img src="./img/gray2.png" alt=""><img src="./img/gray2.png" alt=""></dd>
@@ -147,31 +145,28 @@
           </div>
         </div>
       </div>
-      <!-- <img src="./img/top.png" alt="" style="max-width: 835px;"> -->
     </div>
-
     <div class="bg_white">
       <div class="fadein">
         <img class="copy" src="./img/copy_top2.svg" alt="">
-        <a href="" class="denpota_link"><img class="sp_hidden" src="./img/denpota_pc.svg" alt=""><img class="sp" src="./img/denpota_sp.svg" alt=""></a>
+        <a href="" class="denpota_link"><img class="pc_only" src="./img/denpota_pc.svg" alt=""><img class="sp_only" src="./img/denpota_sp.svg" alt=""></a>
       </div>
     </div>
   </main>
 
   <footer>
-    <div class="wrapper flex">
+    <div class="container flex">
       <nav>
         <ul class="flex">
-          <li class="sp_hidden"><a href="">TOP</a></li>
-          <li><a href="">SERVICE</a></li>
-          <li><a href="">COMPANY</a></li>
-          <li><a href="">CONTACT</a></li>
+          <li class="pc_only"><a href="">TOP</a></li>
+          <li><a href="./service.html">SERVICE</a></li>
+          <li><a href="./company.html">COMPANY</a></li>
+          <li><a href="./contact.html">CONTACT</a></li>
         </ul>
       </nav>
       <div class="address">
           <a href=""><img class="logo" src="./img/logo.svg" alt=""></a>
-          <p>〒065-0023 札幌市東区北23条東5丁目5番10号<br>
-      Tel.011-742-7178　Fax.011-742-3707</p>
+          <p>〒065-0023 札幌市東区北23条東5丁目5番10号<br>Tel.011-742-7178　Fax.011-742-3707</p>
       </div>
     </div>
     <p class="copyright">© 2021 Hokkai-Tec. all rights reserved.</p>
