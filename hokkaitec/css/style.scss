@@ -6,7 +6,8 @@ $textColor: #231815;
 $baseColor: #fff;
 $baseColor2: #eaf3fb;
 $baseColor3: #005abe;
-$baseColor4: #ffe673;
+$baseColor4: #b2b2b3;
+$baseColor5: #ffe673;
 $media-lg: 1270px;
 $media-md: 800px;
 $media-sm: 450px;
@@ -79,8 +80,7 @@ h1 {
 h2 {
   font-weight: 600;
   letter-spacing: 0.2rem;
-  // line-height: 3;
-  font-size: 2rem;
+  font-size: 1.9rem;
   margin: 20px 0;
 }
 
@@ -126,7 +126,7 @@ header {
 
   .logo {
     padding-left: 20px;
-    
+
     img {
       max-width: 300px;
     }
@@ -202,6 +202,8 @@ header {
   }
 }
 
+
+
 /* メインコンテンツ
 ------------------------------- */
 main {
@@ -250,8 +252,8 @@ main {
   }
 
   .list {
-    width: 58%;
     margin-right: 30px;
+    flex: 1;
 
     h4 {
       letter-spacing: 0.1rem;
@@ -269,13 +271,19 @@ main {
       font-weight: 600;
 
       &::before {
-        content: "●";
-        color: $baseColor3;
+        content: "";
+        width:  12px;
+        height:  12px;
+        display:  inline-block;
+        background-color: $baseColor3;
+        border-radius: 50%;
+        margin-right: 3px;
       }
     }
 
     dt {
-      width: 82%;
+      flex: 1;
+      min-width: 84%;
     }
   }
 
@@ -291,10 +299,20 @@ main {
 .service {
   padding-bottom: 50px;
 
+  &:last-child {
+    padding-bottom: 80px;
+  }
+
   .icon {
     width: 90px;
     margin-top: 40px;
   }
+
+  .bg_white {
+    margin-top: 80px;
+    padding-top: 10px;
+  }
+
   p{
     text-align: left;
   }
@@ -320,15 +338,292 @@ main {
         background-color: $baseColor2;
         border: 5px $baseColor solid;
         padding: 30px;
+        min-width: 33.3%;
+        flex: 1;
         }
+    }
+  }
 
-      .width30 {
-        width: 33.3%;
-      }
-      .width50 {
-        width: 50%;
+  .list {
+    padding: 0 4%;
+
+    span.circle {
+      &::before{
+        margin-left: 3px;
       }
     }
+
+    span.small {
+      font-size: 0.75rem;
+    }
+
+    dl {
+      flex-wrap: wrap;
+      align-items: flex-start;
+      margin: 0 auto;
+      max-width: 600px;
+      line-height: 1.8;
+
+    }
+
+    dd {
+      width: 25%;
+      font-weight: 600;
+      color: $baseColor3;
+      border-bottom: 2px $textColor dotted;
+      padding: 0 20px;
+      letter-spacing: 0.1rem;
+    }
+
+    dt {
+      width: 74.6%;
+      border-bottom: 2px $textColor dotted;
+      margin-bottom: 12px;
+      padding: 0 20px;
+    }
+  }
+}
+
+.company {
+  margin-top: 50px;
+
+  dl {
+    font-size: 0.9rem;
+    margin: 0 auto;
+    padding: 0 40px;
+    align-items: flex-start;
+    text-align: left;
+    flex-wrap: wrap;
+  }
+
+  dd {
+    width: 20%;
+    padding: 8px 0;
+    font-weight: 600;
+  }
+
+  dt {
+    width: 80%;
+    padding: 8px 0;
+    &:last-child {
+      padding-bottom: 0px;
+    }
+  }
+}
+
+.banner_map {
+  padding: 50px 40px;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .banner {
+    white-space: nowrap;
+
+    img {
+      width: auto;
+      margin: 5px;
+    }
+
+  }
+
+  .company_ph {
+
+    img{
+      width: auto;
+      margin: 0 5px;
+    }
+
+  }
+
+  .map {
+    padding: 5px;
+    width: 100%;
+    height: 271px;
+  }
+}
+
+.contact {
+    padding-bottom: 80px;
+
+    .flex {
+      justify-content: space-between;
+    }
+
+    p{
+      text-align: center;
+    }
+
+    .bg_white {
+      margin-top: 50px;
+    }
+
+    .blue_title {
+      max-width: 100%;
+      text-align: center;
+    }
+
+    .faq{
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 100px 20px 0;
+      align-items: flex-start;
+
+
+      p {
+        font-size: 0.9rem;
+        text-align: left;
+      }
+
+      .faq_left {
+        width: 40%;
+        min-width: 325px;
+        padding-top: 10px;
+
+        h4 {
+          text-align: center;
+        }
+
+        li {
+          padding-bottom: 16px;
+          margin: 0 auto;
+
+          &:last-child {
+            padding-bottom: 0px;
+          }
+
+          &::after {
+            content: "";
+            padding: 8px 25%;
+            border-right: 2px $baseColor3 dotted;
+            position: relative;
+            bottom: -8px;
+            left: 0;
+          }
+
+          &:last-child::after {
+            padding: 0;
+            border: none;
+          }
+        }
+
+        .icon {
+          width: 100px;
+          line-height: 1.15;
+        }
+      }
+
+      .faq_right {
+        // flex: 1;
+        width: 55%;
+        padding: 10px 0;
+        margin-left: 20px;
+
+        .flex {
+          justify-content: flex-start;
+        }
+
+        .icon {
+          width: 30px;
+          margin: 15px;
+          margin-left: 5px;
+        }
+
+        h4 {
+          margin: 0;
+        }
+      }
+
+
+      .yellow_box {
+        background: $baseColor5;
+        border-radius: 10px;
+        padding: 5%;
+
+        h4 {
+          color: $textColor;
+        }
+      }
+
+      .glay_box {
+        background: #ececec;
+        border-radius: 10px;
+        padding: 5%;
+      }
+    }
+}
+
+form {
+  font-size: 0.95rem;
+  max-width: 700px;
+  margin: 0 auto;
+
+  input,textarea {
+    border: 1px $baseColor4 solid;
+    border-radius: 2px;
+    width: 100%;
+    padding: 2px 5px;
+  }
+
+  .radio {
+    border-bottom: 1px $baseColor2 solid;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+
+    input {
+      width: auto;
+    }
+    label {
+      padding: 14px;
+    }
+  }
+
+  dd {
+    width: 30%;
+    padding: 15px 0;
+    text-align: left;
+    span {
+      font-size: 0.75rem;
+      color: #ec779a;
+      margin-left: 5px;
+    }
+  }
+
+  dt {
+    width: 70%;
+    padding: 12px 0;
+  }
+
+  textarea {
+    height: 150px;
+    resize:none;
+  }
+
+  .button {
+    border: 0px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, .1);
+    background: $baseColor5;
+    max-width: 300px;
+    padding: 12px;
+    margin-top: 30px;
+    font-size: 1.15rem;
+    letter-spacing: 0.1rem;
+    opacity: 1;
+    transition:  0.2s;
+
+    &:hover {
+      opacity: 0.7;
+      transition:  0.2s;
+      box-shadow: none;
+    }
+  }
+
+  .flex{
+    flex-wrap: wrap;
+    align-items: flex-start;
   }
 }
 
@@ -341,10 +636,10 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 10px auto;
+  margin: 0 auto;
 
   position: relative;
-  top: 35px;
+  bottom: 35px;
 }
 
 .blue_box {
@@ -373,12 +668,17 @@ main {
     }
   }
 
-  span {
+  span.circle {
     font-weight: 600;
 
     &::before {
-      content: "●";
-      color: $baseColor3;
+      content: "";
+      width:  12px;
+      height:  12px;
+      display:  inline-block;
+      background-color: $baseColor3;
+      border-radius: 50%;
+      margin-right: 3px;
     }
   }
 
@@ -408,9 +708,8 @@ main {
 
   .white_box {
     max-width: 1024px;
-    margin: 0 auto;
-    padding: 80px 3%;
-    // text-align: center;
+    margin: 50px auto;
+    padding: 10px 3% 50px;
   }
 }
 
@@ -492,6 +791,10 @@ footer {
     display: block;
   }
 
+  .wrapper2 {
+    padding: 0 4%;
+  }
+
   .flex {
     flex-direction: column;
   }
@@ -514,6 +817,7 @@ footer {
       padding: 0;
       width: 100%;
       border-right: 1px $baseColor3 solid;
+      line-height: 1.2;
 
       &:last-child {
         border-right: 0;
@@ -610,11 +914,6 @@ footer {
       dl {
         flex-direction: row;
       }
-
-      dt {
-        width: 85%;
-        max-width: 700px;
-      }
     }
 
     .photo {
@@ -628,20 +927,144 @@ footer {
   }
 
   .service{
+    padding-bottom: 20px;
+
     .lineup{
-      margin: 10px 0 20px;
 
       ul{
         max-width: 450px;
         margin: 0 auto;
+      }
+    }
+    .list {
 
-        .width30 {
-          width: 100%;
-        }
-        .width50 {
-          width: 100%;
+      dl {
+        flex-wrap: nowrap;
+
+      }
+
+      dd {
+        text-align: left;
+        width: 100%;
+        border-bottom: 0px;
+        padding: 0 5px;
+      }
+
+      dt {
+        width: 100%;
+        padding: 0 5px 5px;
+      }
+    }
+  }
+
+  .company {
+    // margin-top: 50px;
+
+    dl {
+      // font-size: 0.9rem;
+      // margin: 0 auto;
+      // padding: 0 40px;
+      // align-items: flex-start;
+      // text-align: left;
+      // flex-wrap: wrap;
+    }
+
+    dd {
+      width: 100%;
+      padding: 0px;
+    }
+
+    dt {
+      width: 100%;
+      padding: 3px 0 15px;
+    }
+  }
+
+  .banner_map {
+    padding: 20px 0 0;
+
+    ul {
+      flex-direction: row;
+      align-items: center;
+      // height: 130px;
+      padding: 0 10px;
+    }
+
+    .banner {
+      width: 60%;
+      padding-right: 10px;
+
+      img{
+        // height: auto;
+        // height: 130px;
+        width: 48%;
+        // width: 100%;
+        // object-fit: cover;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    .company_ph {
+      width: 38%;
+
+      img{
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .map {
+      padding: 0;
+      padding-top: 20px;
+      // width: 100%;
+      // height: 271px;
+    }
+  }
+
+  .contact {
+    padding-bottom: 50px;
+
+    .faq{
+      max-width: 600px;
+
+      .faq_left {
+        width: 100%;
+        min-width: 200px;
+      }
+      .faq_right {
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 80px;
+
+        .flex {
+          flex-direction: row;
         }
       }
+    }
+  }
+
+  form {
+    padding: 0 20px;
+
+    .radio {
+      label {
+        padding: 0 10px 0 0;
+      }
+    }
+
+    dl {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    dd,dt {
+      padding: 0;
+      width: 100%;
+    }
+
+    dt {
+      padding: 5px 0 15px;
     }
   }
 
@@ -684,13 +1107,13 @@ footer {
     padding: 0;
 
     .white_box {
-      padding: 40px 4%;
+      padding: 10px 20px 50px;
       border-radius: 0px;
     }
   }
 
   .bg_white {
-    padding: 40px 0 50px;
+    padding: 40px 0;
   }
 
   .denpota_link {
@@ -717,6 +1140,7 @@ footer {
     }
   }
 }
+
 @media screen and (max-width:$media-sm) {
   header {
     .logo {
@@ -732,7 +1156,8 @@ footer {
   }
 
   h2 {
-    font-size: 6.5vw;
+    font-size: 5.8vw;
+    letter-spacing: 0.15rem;
   }
   h3 {
     font-weight: 600;
@@ -755,10 +1180,28 @@ footer {
   .user_voice {
     .list {
       dt {
-        width: 75%;
+        min-width: 75%;
       }
     }
   }
+
+  .contact {
+    .faq {
+      .faq_right {
+
+        .icon {
+          width: 25px;
+          margin: 3%;
+          margin-left: 0px;
+        }
+
+        h4 {
+          font-size: 3.8vw;
+        }
+      }
+    }
+  }
+
 }
 
 /* フェードイン
